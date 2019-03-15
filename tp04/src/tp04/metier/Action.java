@@ -9,7 +9,7 @@ package tp04.metier;
 import java.util.Objects;
 
 /**
- *
+ *55555
  * @author perussel
  */
 public abstract class Action {
