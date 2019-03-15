@@ -57,7 +57,11 @@ public class Run {
         System.out.println("Portefeuille : " + p);
         p.vendre(bnp, 50);
         System.out.println("Portefeuille : " + p);
- 
+        
+        //affichage des écart de valeur entre deux jours pour une action
+        System.out.println("L'écart de valeur entre deux jours pour l'action simple 'BNP': "+bnp.ecartValeur(j1, j2));
+        System.out.println("L'écart de valeur entre deux jours pour l'action simple 'AXA': "+axa.ecartValeur(j1, j2));
+        System.out.println("L'écart de valeur entre deux jours pour l'action composée 'Banque-Assurance': "+bqAss.ecartValeur(j1, j2));
     }
 
 }

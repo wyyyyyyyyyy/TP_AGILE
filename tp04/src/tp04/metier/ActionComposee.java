@@ -37,6 +37,18 @@ public class ActionComposee extends Action {
         
         return valeur;
     }
+
+    @Override
+    public float ecartValeur(Jour j1, Jour j2) {
+        float ecart;
+        
+        ecart = 0;
+        for(ActionSimple as : this.mapPanier.keySet()) {
+            ecart = ecart + (as.ecartValeur(j1, j2) * this.mapPanier.get(as));
+        }
+        
+        return ecart;
+    }
     
     
 }

@@ -31,6 +31,8 @@ public abstract class Action {
 
     public abstract float valeur(Jour j);
     
+    public abstract float ecartValeur(Jour j1, Jour j2);
+    
     @Override
     public int hashCode() {
         int hash = 3;

@@ -39,6 +39,12 @@ public class ActionSimple extends Action {
         else 
             return 0; // definition d'une constante possible
     }
+
+    @Override
+    public float ecartValeur(Jour j1, Jour j2) {
+        float e = this.valeur(j2)-this.valeur(j1);
+        return e;
+    }
   
     // encapsulation de la définition de la classe Cours
     private class Cours {
