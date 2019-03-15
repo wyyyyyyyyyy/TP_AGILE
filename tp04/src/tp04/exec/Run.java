@@ -5,6 +5,7 @@
  */
 package tp04.exec;
 
+import java.util.Calendar;
 import tp04.metier.Action;
 import tp04.metier.ActionComposee;
 import tp04.metier.ActionSimple;
@@ -21,6 +22,10 @@ public class Run {
         // init des objets metiers Jour
         j1 = new Jour(2014, 1);
         j2 = new Jour(2014, 2);
+        // obtenir Jour pour sysdate
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int nbday = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+        Jour today = new Jour(year,nbday);
 
         // creation d'actions simples et composée
         bnp = new ActionSimple("BNP");
@@ -34,12 +39,17 @@ public class Run {
         axa.enrgCours(j2, 250);
         bnp.enrgCours(j1, 100);
         bnp.enrgCours(j2, 200);
+        axa.enrgCours(today, 200);
+        axa.enrgCours(today, 250);
+        bnp.enrgCours(today, 100);
+        bnp.enrgCours(today, 200);
         // affichage des cours - comme 1 action simple et 1 action
         System.out.println("Action simple *bnp* à j1 : " + bnp.valeur(j1));
         System.out.println("Action *Banque-Assurance* à j2 : " + bqAss.valeur(j2));
 
         Portefeuille p;
         p = new Portefeuille();
+        System.out.println("Portefeuille : " + p);
         p.acheter(axa, 10);
         System.out.println("Portefeuille : " + p);
         p.acheter(bnp, 20);
@@ -59,5 +69,7 @@ public class Run {
         System.out.println("Portefeuille : " + p);
  
     }
+    
+    
 
 }
